@@ -1,0 +1,47 @@
+TRUNCATE `polk-building`;
+load data local infile '/home/waleed/properties/tmp/polk/ftp_bldg.txt'
+replace into table `polk-building`
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\r' ignore 1 lines;
+UPDATE `polk-building` SET PARCEL_ID = REPLACE(PARCEL_ID, '"', "");
+
+TRUNCATE `polk-land`;
+load data local infile '/home/waleed/properties/tmp/polk/ftp_land.txt'
+replace into table `polk-land`
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\r' ignore 1 lines;
+UPDATE `polk-land` SET PARCEL_ID = REPLACE(PARCEL_ID, '"', "");
+
+TRUNCATE `polk-owner`;
+load data local infile '/home/waleed/properties/tmp/polk/ftp_owner.txt'
+replace into table `polk-owner`
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\r' ignore 1 lines;
+UPDATE `polk-owner` SET PARCEL_ID = REPLACE(PARCEL_ID, '"', "");
+
+TRUNCATE `polk-parcel`;
+load data local infile '/home/waleed/properties/tmp/polk/ftp_parcel.txt'
+replace into table `polk-parcel`
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\r' ignore 1 lines;
+UPDATE `polk-parcel` SET PARCEL_ID = REPLACE(PARCEL_ID, '"', "");
+
+TRUNCATE `polk-sales`;
+load data local infile '/home/waleed/properties/tmp/polk/ftp_sales.txt'
+replace into table `polk-sales`
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\r' ignore 1 lines;
+UPDATE `polk-sales` SET PARCEL_ID = REPLACE(PARCEL_ID, '"', "");
+
+TRUNCATE `polk-site`;
+load data local infile '/home/waleed/properties/tmp/polk/ftp_site.txt'
+replace into table `polk-site`
+fields terminated by ','
+enclosed by '"'
+lines terminated by '\r' ignore 1 lines;
+UPDATE `polk-site` SET PARCEL_ID = REPLACE(PARCEL_ID, '"', "");
